@@ -1,0 +1,23 @@
+# Jupyter checkpoints and Python caches
+.ipynb_checkpoints/
+__pycache__/
+*.py[cod]
+
+# MATLAB autosaves and local session files
+*.asv
+*.m~
+matlab.prf
+matlab_crash_dump.*
+
+# Local editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Local credentials and temporary files
+.env
+.env.*
+tmp/
+*.log
