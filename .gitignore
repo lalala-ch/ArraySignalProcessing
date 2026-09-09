@@ -4,6 +4,7 @@ __pycache__/
 *.py[cod]
 
 # MATLAB autosaves and local session files
+*.mlx
 *.asv
 *.m~
 matlab.prf

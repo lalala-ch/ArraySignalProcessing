@@ -1,12 +1,12 @@
 # ArraySignalProcessing
 
-MATLAB study notes and simulations for array signal processing, covering narrowband beamforming and direction-of-arrival (DOA) estimation. The notebooks combine theoretical derivations, simulation code, and results; standalone `.m` files provide solver functions and additional examples.
+MATLAB study notes and simulations for array signal processing, covering narrowband beamforming and direction-of-arrival (DOA) estimation. The notebooks combine theoretical derivations, simulation code, and results. Only the `.m` solver functions required by the notebooks are included; standalone example scripts and `.mlx` files are excluded.
 
 ## Repository structure
 
 ```text
 ArraySignalProcessing/
-├── narrowband beamforming/       # 7 notebooks and 5 example scripts
+├── narrowband beamforming/       # 7 notebooks
 ├── narrowband DOA estimation/    # 2 notebooks and 4 solver functions
 ├── README.md
 └── LICENSE
@@ -23,14 +23,6 @@ ArraySignalProcessing/
 | [RefsigBasedBeamformer.ipynb](narrowband%20beamforming/RefsigBasedBeamformer.ipynb) | Reference-signal-based LMS and RLS adaptive beamforming |
 | [BlindAdaptiveBeamformer.ipynb](narrowband%20beamforming/BlindAdaptiveBeamformer.ipynb) | Minimum-power, CMA, LS-CMA, and LS-SCORE blind beamforming |
 | [RobustBF.ipynb](narrowband%20beamforming/RobustBF.ipynb) | Diagonally loaded Capon, worst-case robust beamforming, and Gu–Leshem interference covariance reconstruction with steering vector estimation |
-
-Additional scripts:
-
-- `LSbasedBeamformer_2.m`: A least-squares beamforming example.
-- `qpsk_ls_score_demo_fixed.m`: An LS-SCORE example using QPSK signals.
-- `wc_rab_demo.m`: Worst-case robust beamforming using an equivalent diagonal-loading formulation and bisection, without CVX.
-- `wc_rab_cvx_demo.m`: Worst-case robust beamforming solved with CVX.
-- `gu_leshem_capon_reconstruction_demo.m`: Gu–Leshem covariance reconstruction and steering vector estimation; requires CVX.
 
 ## Narrowband DOA estimation
 
@@ -50,7 +42,7 @@ Standalone solver functions are located alongside the notebooks:
 
 1. Install MATLAB and a MATLAB-compatible Jupyter kernel. These notebooks use the kernel name `jupyter_matlab_kernel`, not a Python kernel. Selected solver functions have been verified in MATLAB R2024b.
 2. Install the toolboxes needed by each example: Signal Processing Toolbox (e.g., `findpeaks`, `firpm`, `fir1`, and `upfirdn`) and Communications Toolbox (e.g., `awgn`, `pskmod`, and `rcosdesign`). Robust beamforming examples that use CVX require a separate CVX installation; run `cvx_setup` before using them.
-3. Open a notebook in its subdirectory, set the MATLAB working directory to that subdirectory, and run the cells in order. Standalone `.m` examples can be run directly in MATLAB.
+3. Open a notebook in its subdirectory, set the MATLAB working directory to that subdirectory, and run the cells in order.
 4. The sparsity-based DOA notebook requires the four solver functions in the same directory. Alternatively, add both subdirectories to the MATLAB path from the repository root:
 
    ```matlab
@@ -62,4 +54,4 @@ The examples use simulated data, and some algorithms share initialization result
 
 ## License
 
-This project is released under the [MIT License](LICENSE). Algorithm descriptions and references to relevant papers are retained in the notebooks and example scripts.
+This project is released under the [MIT License](LICENSE). Algorithm descriptions and references to relevant papers are retained in the notebooks.
