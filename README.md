@@ -40,8 +40,8 @@ Standalone solver functions are located alongside the notebooks:
 
 ## Getting started
 
-1. Install MATLAB and a MATLAB-compatible Jupyter kernel. These notebooks use the kernel name `jupyter_matlab_kernel`, not a Python kernel. Selected solver functions have been verified in MATLAB R2024b.
-2. Install the toolboxes needed by each example: Signal Processing Toolbox (e.g., `findpeaks`, `firpm`, `fir1`, and `upfirdn`) and Communications Toolbox (e.g., `awgn`, `pskmod`, and `rcosdesign`). Robust beamforming examples that use CVX require a separate CVX installation; run `cvx_setup` before using them.
+1. Install MATLAB and a MATLAB-compatible Jupyter kernel. These notebooks use the kernel name `jupyter_matlab_kernel`, not a Python kernel. Selected solver functions have been verified in MATLAB R2024b. You can just ask ChatGPT to build up a matlab kernel of jupyternote book for you.
+2. Install the toolboxes needed by each example: Signal Processing Toolbox  and Communications Toolbox. Robust beamforming examples that use CVX require a separate CVX installation; run `cvx_setup` before using them.
 3. Open a notebook in its subdirectory, set the MATLAB working directory to that subdirectory, and run the cells in order.
 4. The sparsity-based DOA notebook requires the four solver functions in the same directory. Alternatively, add both subdirectories to the MATLAB path from the repository root:
 
