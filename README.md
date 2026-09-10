@@ -1,6 +1,6 @@
 # ArraySignalProcessing
 
-MATLAB study notes and simulations for array signal processing, covering narrowband beamforming and direction-of-arrival (DOA) estimation. The notebooks combine theoretical derivations, simulation code, and results. Only the `.m` solver functions required by the notebooks are included; standalone example scripts and `.mlx` files are excluded.
+MATLAB study notes and simulations for array signal processing, covering narrowband beamforming and direction-of-arrival (DOA) estimation. The notebooks combine theoretical derivations, simulation code, and results. 
 
 ## Repository structure
 
