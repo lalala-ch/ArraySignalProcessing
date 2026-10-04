@@ -39,8 +39,6 @@ Standalone solver functions are located alongside the notebooks:
 - `solve_spice.m`: A unified solver for full-rank and rank-deficient sample covariance matrices (SCMs). It estimates angular-grid powers and per-sensor noise powers, and returns the fitted covariance matrix and iteration histories.
 - `solve_sbl_em.m`: A multisnapshot EM-SBL solver that estimates shared angular-grid variances and noise power, returning posterior means and convergence histories.
 
-The notebook calls `solve_sbl_em.m` and plots the normalized power spectrum over the full angle grid, marking the selected DOAs. EM itself does not require the number of sources: `k = length(theta)` is used only to report the top `k` peaks and calculate RMSE in this simulation. For measured data, choose the peak count or a detection threshold separately.
-
 ## Getting started
 
 1. Install MATLAB and a MATLAB-compatible Jupyter kernel. These notebooks use the kernel name `jupyter_matlab_kernel`, not a Python kernel. Selected solver functions have been verified in MATLAB R2024b. You can just ask ChatGPT to build up a matlab kernel of jupyternote book for you.
