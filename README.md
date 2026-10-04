@@ -29,7 +29,7 @@ ArraySignalProcessing/
 | Notebook | Algorithms and topics |
 | --- | --- |
 | [Classical_NB_Doa.ipynb](narrowband%20DOA%20estimation/Classical_NB_Doa.ipynb) | Bartlett, Capon, and FFT spatial spectrum estimation; MUSIC, FFT-accelerated MUSIC, LS-ESPRIT, and TLS-ESPRIT; deterministic maximum likelihood (DML) estimation using alternating projection, Gauss–Newton, and EM |
-| [SparsityBased_NB_Doa.ipynb](narrowband%20DOA%20estimation/SparsityBased_NB_Doa.ipynb) | OMP and CoSaMP; FISTA and ADMM for group-sparse optimization; ℓ1-SVD; FOCUSS; SPICE sparse covariance fitting |
+| [SparsityBased_NB_Doa.ipynb](narrowband%20DOA%20estimation/SparsityBased_NB_Doa.ipynb) | OMP and CoSaMP; FISTA and ADMM for group-sparse optimization; ℓ1-SVD; FOCUSS; SPICE sparse covariance fitting; multisnapshot EM-SBL with a full spatial-spectrum plot |
 
 Standalone solver functions are located alongside the notebooks:
 
@@ -37,6 +37,8 @@ Standalone solver functions are located alongside the notebooks:
 - `solve_group_lasso_admm.m`: An ADMM group-sparse solver that records primal/dual residuals and stopping thresholds.
 - `solve_focuss.m`: An iterative FOCUSS solver.
 - `solve_spice.m`: A unified solver for full-rank and rank-deficient sample covariance matrices (SCMs). It estimates angular-grid powers and per-sensor noise powers, and returns the fitted covariance matrix and iteration histories.
+
+The SBL example is implemented directly in the notebook. It assigns a learnable variance to each angle-grid point, shares those variances across snapshots, and updates a common noise variance with EM. The notebook plots the normalized power spectrum over the full angle grid and marks the selected DOAs. EM itself does not require the number of sources: `k = length(theta)` is used only to report the top `k` peaks and calculate RMSE in this simulation. For measured data, choose the peak count or a detection threshold separately.
 
 ## Getting started
 
