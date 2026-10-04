@@ -7,7 +7,7 @@ MATLAB study notes and simulations for array signal processing, covering narrowb
 ```text
 ArraySignalProcessing/
 ├── narrowband beamforming/       # 7 notebooks
-├── narrowband DOA estimation/    # 2 notebooks and 4 solver functions
+├── narrowband DOA estimation/    # 2 notebooks and 5 solver functions
 ├── README.md
 └── LICENSE
 ```
@@ -37,15 +37,16 @@ Standalone solver functions are located alongside the notebooks:
 - `solve_group_lasso_admm.m`: An ADMM group-sparse solver that records primal/dual residuals and stopping thresholds.
 - `solve_focuss.m`: An iterative FOCUSS solver.
 - `solve_spice.m`: A unified solver for full-rank and rank-deficient sample covariance matrices (SCMs). It estimates angular-grid powers and per-sensor noise powers, and returns the fitted covariance matrix and iteration histories.
+- `solve_sbl_em.m`: A multisnapshot EM-SBL solver that estimates shared angular-grid variances and noise power, returning posterior means and convergence histories.
 
-The SBL example is implemented directly in the notebook. It assigns a learnable variance to each angle-grid point, shares those variances across snapshots, and updates a common noise variance with EM. The notebook plots the normalized power spectrum over the full angle grid and marks the selected DOAs. EM itself does not require the number of sources: `k = length(theta)` is used only to report the top `k` peaks and calculate RMSE in this simulation. For measured data, choose the peak count or a detection threshold separately.
+The notebook calls `solve_sbl_em.m` and plots the normalized power spectrum over the full angle grid, marking the selected DOAs. EM itself does not require the number of sources: `k = length(theta)` is used only to report the top `k` peaks and calculate RMSE in this simulation. For measured data, choose the peak count or a detection threshold separately.
 
 ## Getting started
 
 1. Install MATLAB and a MATLAB-compatible Jupyter kernel. These notebooks use the kernel name `jupyter_matlab_kernel`, not a Python kernel. Selected solver functions have been verified in MATLAB R2024b. You can just ask ChatGPT to build up a matlab kernel of jupyternote book for you.
 2. Install the toolboxes needed by each example: Signal Processing Toolbox  and Communications Toolbox. Robust beamforming examples that use CVX require a separate CVX installation; run `cvx_setup` before using them.
 3. Open a notebook in its subdirectory, set the MATLAB working directory to that subdirectory, and run the cells in order.
-4. The sparsity-based DOA notebook requires the four solver functions in the same directory. Alternatively, add both subdirectories to the MATLAB path from the repository root:
+4. The sparsity-based DOA notebook requires the five solver functions in the same directory. Alternatively, add both subdirectories to the MATLAB path from the repository root:
 
    ```matlab
    addpath(fullfile(pwd, 'narrowband beamforming'));
